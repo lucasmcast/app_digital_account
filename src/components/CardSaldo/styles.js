@@ -2,11 +2,13 @@ import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
     containerCardSaldo:{
-        margin: 10,
+        margin: 20,
         width: "90%",
-        height: 100,
-        backgroundColor: "red"
-    }
+        borderRadius: 20,
+        backgroundColor: "white",
+        justifyContent: "space-between"
+    },
+    
 });
 
 export default styles;

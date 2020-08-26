@@ -4,10 +4,12 @@ import {
 } from 'react-native'
 import { CardSaldo } from '../CardSaldo'
 import styles from './styles'
+import { CardsActions } from '../CardsActions'
 
 function Main(props){
     return(
-        <View>
+        <View style={styles.containerMain}>
+            <CardsActions></CardsActions>
             <CardSaldo></CardSaldo>
         </View>
     )

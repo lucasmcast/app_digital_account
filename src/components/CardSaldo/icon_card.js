@@ -1,0 +1,1 @@
+export {default as icon_conta} from './images/icon_conta.png'
