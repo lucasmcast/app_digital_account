@@ -4,7 +4,7 @@ import {View} from 'react-native'
 
 function CardTransfer(props){
     return(
-        <View></View>
+        <View> </View>
     )
 }
 
