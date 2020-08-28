@@ -4,14 +4,16 @@ const styles = StyleSheet.create({
     continerWelcomerLogin:{
         width: "55%",
         alignSelf: "flex-end",
-        paddingTop: 20
+        marginTop: 50,
+        flex: 1
     },
     textWelcome:{
         fontSize: 20,
-        opacity: 1
+        fontWeight: "bold",
+        color: "#FFF"
     },
     textMsg:{
-        fontSize: 30,
+        fontSize: 28,
         
     }
 })

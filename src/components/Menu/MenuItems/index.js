@@ -2,7 +2,7 @@ import React from 'react';
 import {View, TouchableOpacity, Image, Text} from 'react-native'
 import styles from './styles'
 
-function TabsMenuItems(){
+function MenuItems(){
     return(
         <View>
             <TouchableOpacity>
@@ -26,4 +26,4 @@ function TabsMenuItems(){
 
 }
 
-export default TabsMenuItems;
+export default MenuItems;

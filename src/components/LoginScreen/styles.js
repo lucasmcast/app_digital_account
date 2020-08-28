@@ -1,14 +1,18 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet, Dimensions } from "react-native"
 
 const styles = StyleSheet.create({
     containerLogin:{
         width: "100%",
         flexGrow:1,
-        justifyContent: "space-around"
+        justifyContent: "space-around",
+        backgroundColor: "#e63888",
+        alignItems: "center"
     },  
     imageWoman:{
-        width: "100%",
-        height: "100%",
+        width: Dimensions.get("screen").width,
+        height: Dimensions.get("screen").height,
+        top: 0,
+        left: 0,
         opacity: 0.7,
         position: "absolute",
         

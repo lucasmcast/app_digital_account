@@ -7,8 +7,7 @@ import styles from './styles'
 import { CardsFeatures } from '../CardsFeatures'
 import { Header } from '../Header'
 import { StatusBar } from 'react-native'
-import { LoginScreen } from '../LoginScreen'
-import { TabsMenu } from '../TabsMenu'
+import { Menu } from '../Menu'
 
 function Main(props) {
     return (
@@ -16,11 +15,10 @@ function Main(props) {
             <StatusBar backgroundColor="#e63888" barStyle="light-content" />
             <View>
                 <Header></Header>
-                <TabsMenu></TabsMenu>
+                <Menu></Menu>
             </View>
             <CardAccount></CardAccount>
             <CardsFeatures></CardsFeatures>
-            {/* <LoginScreen></LoginScreen> */}
         </View>
     )
 }
