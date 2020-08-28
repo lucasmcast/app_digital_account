@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     imageWoman:{
         width: "100%",
         height: "100%",
-        /* opacity: 0.4, */
+        opacity: 0.7,
         position: "absolute",
         
     }

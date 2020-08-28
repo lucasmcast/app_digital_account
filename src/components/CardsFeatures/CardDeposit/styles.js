@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
         borderRightWidth:1,
         borderColor: "#FFFFFF", 
         padding:5,
-        width: 80
+        width: 80,
+        opacity: 0.8
     },
     imageDeposit:{
         width: 20,

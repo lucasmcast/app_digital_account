@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
         borderLeftWidth:1,
         borderColor: "#FFFFFF",
         padding:5,
-        width: 80
+        width: 80,
+        opacity: 0.2
     },
     imagePay:{
         width:30,
