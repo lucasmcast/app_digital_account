@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native"
+import {secondColor} from '../../../../res/colors'
 
 const styles = StyleSheet.create({
     containerFooter: {
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     cardFooter:{
         padding: 10,
         alignItems: "center",
-        backgroundColor: "#F06292",
+        backgroundColor: secondColor,
         borderRadius: 20,
         opacity: 0.8,
         width: "40%"

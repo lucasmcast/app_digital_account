@@ -1,0 +1,6 @@
+export const primaryColor = "#e63888"
+export const secondColor = "#F06292"
+export const highLightsColor = "#FFF"
+export const cardLoginColor = "#FFF"
+export const inputCardLoginColor = "#000000"
+export const textSaldoDisponivel = "#9E9E9E"

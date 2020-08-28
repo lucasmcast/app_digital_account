@@ -1,4 +1,10 @@
 import { StyleSheet } from "react-native"
+import {
+    cardLoginColor, 
+    secondColor, 
+    inputCardLoginColor,
+    highLightsColor
+} from '../../../../res/colors'
 
 const styles = StyleSheet.create({
     containerLogin:{
@@ -6,7 +12,7 @@ const styles = StyleSheet.create({
         width: "90%",
         borderRadius:20,
         opacity: 0.5,
-        backgroundColor: "#FFFFFF",
+        backgroundColor: cardLoginColor,
         padding: 20,
       
     },
@@ -18,9 +24,9 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
         borderBottomWidth: 5,
-        borderBottomColor: "#EC407A",
-        backgroundColor: "#000000", 
-        color: "#FFFFFF",
+        borderBottomColor: secondColor,
+        backgroundColor: inputCardLoginColor, 
+        color: highLightsColor,
         padding: 10,
         fontSize: 18,
     },

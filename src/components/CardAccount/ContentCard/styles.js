@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native"
+import {textSaldoDisponivel} from '../../../../res/colors'
 
 const styles = StyleSheet.create({
     containerContentCard:{
@@ -9,7 +10,7 @@ const styles = StyleSheet.create({
         fontSize: 40
     },
     textDescricao:{
-        color: "#9E9E9E"
+        color: textSaldoDisponivel
     }
 });
 

@@ -1,9 +1,7 @@
 import React from 'react'
 import styles from './styles'
 import {View} from 'react-native'
-import { CardDeposit } from './CardDeposit'
-import { CardTransfer } from './CardTransfer'
-import { CardPay } from './CardPay'
+import {CardDeposit, CardTransfer, CardPay} from './ItemsCards'
 
 function CardsActions(props){
     return(

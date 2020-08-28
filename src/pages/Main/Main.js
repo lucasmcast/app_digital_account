@@ -2,12 +2,12 @@ import React from 'react'
 import {
     View
 } from 'react-native'
-import { CardAccount } from '../CardAccount'
+import { CardAccount } from '../../components/CardAccount'
 import styles from './styles'
-import { CardsFeatures } from '../CardsFeatures'
-import { Header } from '../Header'
+import { CardsFeatures } from '../../components/CardsFeatures'
+import { Header } from '../../components/Header'
 import { StatusBar } from 'react-native'
-import { Menu } from '../Menu'
+import { Menu } from '../../components/Menu'
 
 function Main(props) {
     return (

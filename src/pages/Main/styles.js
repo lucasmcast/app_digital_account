@@ -1,11 +1,12 @@
 import { StyleSheet } from "react-native"
+import {primaryColor} from '../../../res/colors'
 
 const styles = StyleSheet.create({
     containerMain:{
         flex: 1,
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: "#e63888",
+        backgroundColor: primaryColor,
         height: "100%",
     }
 });

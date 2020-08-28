@@ -11,6 +11,7 @@ import styles from './styles'
 import HeaderDetailsModal from './HeaderDetailsModal';
 import { conta } from '../../../../res/data'
 import CardExtract from './CardExtract';
+import {textSaldoDisponivel} from '../../../../res/colors'
 
 function DetailsModal(props) {
     return (
@@ -27,11 +28,14 @@ function DetailsModal(props) {
                     <HeaderDetailsModal onClickHide={props.onClickHide} />
 
                     <FlatList
+                        refreshControl={console.log("Atualizado")}
+                        onRefresh={()=>{console.log("Atualizado")}}
+                        refreshing={false}
                         data={conta.extratos}
                         keyExtractor={(item) => item.id}
                         ListHeaderComponent={
                             <View style={styles.modalView}>
-                                <Text style={{color: "#FFFFFF"}}>Saldo disponível</Text>
+                                <Text style={{color: textSaldoDisponivel}}>Saldo disponível</Text>
                                 <Text style={styles.textStyle}>R$ {conta.saldoDisponivel}</Text>
                             </View>
                         }

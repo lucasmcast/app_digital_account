@@ -71,3 +71,8 @@ export const conta = {
         }
     ]
 }
+
+export const login  = {
+    email: "lucas",
+    password: "1234"
+}

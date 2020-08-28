@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native"
+import {highLightsColor} from '../../../../res/colors'
 
 const styles = StyleSheet.create({
     continerWelcomerLogin:{
@@ -10,7 +11,7 @@ const styles = StyleSheet.create({
     textWelcome:{
         fontSize: 20,
         fontWeight: "bold",
-        color: "#FFF"
+        color: highLightsColor
     },
     textMsg:{
         fontSize: 28,

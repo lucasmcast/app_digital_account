@@ -6,7 +6,7 @@ import WelcomeLogin from './WelcomeLogin'
 import Login from './Login'
 import FooterLogin from './FooterLogin'
 
-function LoginScreen(props) {
+function LoginScreen({navigation}) {
     return (
         <View style={styles.containerLogin}>
             <StatusBar backgroundColor={"#e63888"}></StatusBar>
@@ -14,7 +14,9 @@ function LoginScreen(props) {
                 source={womanLogin}>
             </Image>
             <WelcomeLogin></WelcomeLogin>
-            <Login></Login>
+            <Login 
+                onPress={()=>{ navigation.navigate("Main")}}
+            ></Login>
             <FooterLogin></FooterLogin>
         </View >
     )

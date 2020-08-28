@@ -1,11 +1,12 @@
 import { StyleSheet, Dimensions } from "react-native"
+import {primaryColor} from '../../../res/colors'
 
 const styles = StyleSheet.create({
     containerLogin:{
         width: "100%",
         flexGrow:1,
         justifyContent: "space-around",
-        backgroundColor: "#e63888",
+        backgroundColor: primaryColor,
         alignItems: "center"
     },  
     imageWoman:{

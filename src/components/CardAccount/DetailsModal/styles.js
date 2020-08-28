@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native"
+import {primaryColor, highLightsColor} from '../../../../res/colors'
 
 const styles = StyleSheet.create({
     centeredView: {
@@ -9,13 +10,13 @@ const styles = StyleSheet.create({
       },
       modalView: {
         margin: 20,
-        backgroundColor: "#e63888",
+        backgroundColor: primaryColor,
         borderRadius: 20,
         padding: 35,
       },
       textStyle: {
         fontSize: 40,
-        color: "#FFFFFF"
+        color: highLightsColor
       },
       modalText: {
 
