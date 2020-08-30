@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
-    icon_conta:{
+    iconHeader:{
         width: 30,
         height: 30,
         margin: 10
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center"
     },
-    icon_backScreen:{
+    iconBackScreen:{
         width: 20,
         height: 20,
         margin: 10

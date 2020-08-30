@@ -7,7 +7,7 @@ function CardDeposit(props){
     return(
         <TouchableOpacity style={styles.containerItemsCards}>
             <Image style={styles.imageItemsCards}source={icon_deposit}></Image>
-            <Text style={styles.textItemsCards}>Depósitos</Text>
+            <Text style={styles.textItemsCards}>Depositar</Text>
         </TouchableOpacity>
     )
 }

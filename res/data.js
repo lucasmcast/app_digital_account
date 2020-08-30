@@ -76,3 +76,30 @@ export const login  = {
     email: "lucas",
     password: "1234"
 }
+
+export const contasCadastradas = [
+    {
+        nomeFavorecido: "Lucas Martins de Castro",
+        numeroConta: "02045369",
+        cpf: "089.369.789-92",
+        agencia: "3689"
+    },
+    {
+        nomeFavorecido: "Sandro Afonso da Silva",
+        numeroConta: "02045358",
+        cpf: "089.369.875-78",
+        agencia: "3689"
+    },
+    {
+        nomeFavorecido: "Carlos da Silveira",
+        numeroConta: "02044789",
+        cpf: "089.369.789-98",
+        agencia: "3689"
+    },
+    {
+        nomeFavorecido: "Augusto Charles Silva",
+        numeroConta: "02032541",
+        cpf: "089.369.1478-56",
+        agencia: "3689"
+    },
+]

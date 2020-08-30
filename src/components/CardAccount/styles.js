@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 24,
         position: "absolute",
-        top:90,
+        top:99,
         right:0,
         left:0,
     }

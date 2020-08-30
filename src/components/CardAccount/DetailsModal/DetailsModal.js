@@ -8,10 +8,11 @@ import {
 } from 'react-native'
 
 import styles from './styles'
-import HeaderDetailsModal from './HeaderDetailsModal';
 import { conta } from '../../../../res/data'
 import CardExtract from './CardExtract';
 import {textSaldoDisponivel} from '../../../../res/colors'
+import HeaderModal from '../../HeaderModal';
+import {icon_conta} from '../../../../res/icon_card'
 
 function DetailsModal(props) {
     return (
@@ -25,8 +26,7 @@ function DetailsModal(props) {
                 }}
             >
                 <View style={{ flex: 1 }}>
-                    <HeaderDetailsModal onClickHide={props.onClickHide} />
-
+                   <HeaderModal onClickHide={props.onClickHide} icon={icon_conta}/>
                     <FlatList
                         refreshControl={console.log("Atualizado")}
                         onRefresh={()=>{console.log("Atualizado")}}
