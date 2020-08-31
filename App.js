@@ -9,8 +9,13 @@ import {
   ConfirmTransfer
 } from './src/pages'
 import 'react-native-gesture-handler';
+import configureStore from './src/redux/store'
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator, TransitionPresets, TransitionSpecs } from '@react-navigation/stack';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react'
+
+const { store, persistor } = configureStore()
 
 const Stack = createStackNavigator();
 const config = {
@@ -27,82 +32,86 @@ const config = {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login" mode="modal">
-        <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
-        <Stack.Screen options={{ headerShown: false }} name="Main" component={Main} />
-        <Stack.Screen
-          name="TransferScreen"
-          component={TransferScreen}
-          options={{
-            headerShown: false,
-            transitionSpec: {
-              open: config,
-              close: config,
-            },
-          }}
-        />
-        <Stack.Screen
-          name="NumberRegister"
-          component={NumberRegisterScreen}
-          options={{
-            headerShown: false,
-            ...TransitionPresets.SlideFromRightIOS,
-            /* transitionSpec: {
-              open: config,
-              close: config,
-            }, */
-            gestureEnabled: true,
-            gestureResponseDistance: 20,
-            gestureDirection: "horizontal"
-          }}
-        />
-        <Stack.Screen
-          name="FullName"
-          component={FullNameScreen}
-          options={{
-            headerShown: false,
-            ...TransitionPresets.SlideFromRightIOS,
-            /* transitionSpec: {
-              open: config,
-              close: config,
-            }, */
-            gestureEnabled: true,
-            gestureResponseDistance: 20,
-            gestureDirection: "horizontal"
-          }}
-        />
-        <Stack.Screen
-          name="InsertValue"
-          component={InsertValueScreen}
-          options={{
-            headerShown: false,
-            ...TransitionPresets.SlideFromRightIOS,
-            /* transitionSpec: {
-              open: config,
-              close: config,
-            }, */
-            gestureEnabled: true,
-            gestureResponseDistance: 20,
-            gestureDirection: "horizontal"
-          }}
-        />
-        <Stack.Screen
-          name="ConfirmTransfer"
-          component={ConfirmTransfer}
-          options={{
-            headerShown: false,
-            ...TransitionPresets.SlideFromRightIOS,
-            /* transitionSpec: {
-              open: config,
-              close: config,
-            }, */
-            gestureEnabled: true,
-            gestureResponseDistance: 20,
-            gestureDirection: "horizontal"
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="Login" mode="modal">
+            <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
+            <Stack.Screen options={{ headerShown: false }} name="Main" component={Main} />
+            <Stack.Screen
+              name="TransferScreen"
+              component={TransferScreen}
+              options={{
+                headerShown: false,
+                transitionSpec: {
+                  open: config,
+                  close: config,
+                },
+              }}
+            />
+            <Stack.Screen
+              name="NumberRegister"
+              component={NumberRegisterScreen}
+              options={{
+                headerShown: false,
+                ...TransitionPresets.SlideFromRightIOS,
+                /* transitionSpec: {
+                  open: config,
+                  close: config,
+                }, */
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal"
+              }}
+            />
+            <Stack.Screen
+              name="FullName"
+              component={FullNameScreen}
+              options={{
+                headerShown: false,
+                ...TransitionPresets.SlideFromRightIOS,
+                /* transitionSpec: {
+                  open: config,
+                  close: config,
+                }, */
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal"
+              }}
+            />
+            <Stack.Screen
+              name="InsertValue"
+              component={InsertValueScreen}
+              options={{
+                headerShown: false,
+                ...TransitionPresets.SlideFromRightIOS,
+                /* transitionSpec: {
+                  open: config,
+                  close: config,
+                }, */
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal"
+              }}
+            />
+            <Stack.Screen
+              name="ConfirmTransfer"
+              component={ConfirmTransfer}
+              options={{
+                headerShown: false,
+                ...TransitionPresets.SlideFromRightIOS,
+                /* transitionSpec: {
+                  open: config,
+                  close: config,
+                }, */
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal"
+              }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PersistGate>
+    </Provider>
   );
 }

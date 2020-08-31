@@ -8,7 +8,6 @@ import styles from './styles';
 function ConfirmTransfer({ navigation, route }) {
     const conta = route.params.conta
     const value = route.params.value
-    console.log(conta)
     return (
         <View style={styles.container}>
             <HeaderAbstract onClickHide={() => navigation.navigate("InsertValue")}></HeaderAbstract>

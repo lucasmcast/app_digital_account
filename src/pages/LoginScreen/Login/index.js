@@ -1,25 +1,25 @@
 import React, { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Switch } from 'react-native'
 import styles from './styles'
-import { login } from '../../../../res/data'
-
+import { fetchLogin } from '../../../dao/fetchAPI'
+import { addLogin } from '../../../../src/redux/actions'
+import { connect } from 'react-redux'
 
 function Login(props) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [isEnabled, setIsEnabled] = useState(false);
 
+
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-    function validateUser() {
-        if (login.email === email) {
-            if (login.password === password) {
-                console.log("Usuario autenticado")
-                props.onPress()
-            } else {
-                alert("Autenticação invalida")
-            }
+
+    function validateUser(login) {
+        if (login !== "Error") {
+            console.log("Login com sucesso", login)
+            props.onPress()
+            props.addLogin(login)
         } else {
-            alert("Autenticação invalida")
+            alert("Erro no Login")
         }
     }
 
@@ -48,7 +48,8 @@ function Login(props) {
                 <TouchableOpacity
                     style={styles.buttonLogin}
                     onPress={() => {
-                        validateUser()
+                        let login = fetchLogin(email, password);
+                        validateUser(login)
                     }}
                 >
                     <Text style={{ color: "#FFF", fontSize: 18, fontWeight: "bold" }}>Login</Text>
@@ -59,4 +60,4 @@ function Login(props) {
     )
 }
 
-export default Login;
+export default connect(null, { addLogin })(Login);

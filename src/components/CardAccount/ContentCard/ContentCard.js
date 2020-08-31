@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './styles'
-import {View, Text} from 'react-native'
+import { View, Text } from 'react-native'
 
-function ContentCard({item}) {
+function ContentCard({ item }) {
     return (
         <View style={styles.containerContentCard}>
             <Text style={styles.textDescricao}>Saldo Disponivel:</Text>

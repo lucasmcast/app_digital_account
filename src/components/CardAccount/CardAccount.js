@@ -8,8 +8,9 @@ import DetailsModal from './DetailsModal/DetailsModal'
 import { conta } from '../../../res/data'
 import { Animated } from 'react-native'
 import { PanGestureHandler, State } from 'react-native-gesture-handler'
+import { connect } from 'react-redux'
 
-function CardAccount(props) {
+function CardAccount({ dataAccount }) {
     let offset = 0;
     const translateY = new Animated.Value(0)
 
@@ -71,6 +72,7 @@ function CardAccount(props) {
                 }
             >
                 <DetailsModal
+                    account={dataAccount}
                     onClickHide={event => { setModalVisible(false) }}
                     modalVisible={modalVisible}>
                 </DetailsModal>
@@ -78,13 +80,19 @@ function CardAccount(props) {
                 <TouchableOpacity
                     onPress={() => setModalVisible(true)}
                 >
-                    <ContentCard item={conta.saldoDisponivel}></ContentCard>
+                    <ContentCard item={dataAccount.saldoDisponivel}></ContentCard>
                 </TouchableOpacity>
-                <FooterCard item={conta.lastTransaction}></FooterCard>
+                <FooterCard item={dataAccount.lastTransaction}></FooterCard>
 
             </Animated.View>
         </PanGestureHandler>
     )
 }
 
-export default CardAccount;
+const mapStateToProps = (state) => {
+    return (
+        { dataAccount: state.rootDataAccount.dataAccount }
+    )
+}
+
+export default connect(mapStateToProps)(CardAccount);

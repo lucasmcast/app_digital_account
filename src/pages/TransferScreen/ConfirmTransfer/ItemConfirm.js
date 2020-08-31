@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import styles from './styles'
 
 function ItemConfirm(props) {
-    console.log(props)
     return (
         <View style={styles.containerItem}>
             <Icon name={props.icon} size={30} color="#000" />

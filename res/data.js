@@ -1,83 +1,142 @@
+import Login from "../src/pages/LoginScreen/Login";
+
 export const conta = {
-    nome: "Lucas",
-    foto: 'https://img.elo7.com.br/product/zoom/2A128B7/caricatura-individual-de-rosto-caricatura-menino.jpg',
-    saldoDisponivel: "2.500,50",
-    lastTransaction: {
-        status: "Transferência",
-        estabelecimento: "Lucas Martins de Castro",
-        valor: "R$1.000,00"
-    },
-    login: login,
-    extratos: [
-        {
-            id: "1",
-            status: "Compra",
-            estabelecimento: "Super Mercado Elizeu",
-            valor: "R$12,00",
-            date: "02/08/2020"
-        },
-        {
-            id: "2",
-            status: "Compra",
-            estabelecimento: "Posto do Afonso",
-            valor: "R$100,00",
-            date: "02/08/2020"
-        },
-        {
-            id: "3",
-            status: "Depósito",
-            estabelecimento: "Padaria do Irineu",
-            valor: "R$22,00",
-            date: "02/08/2020"
-        },
-        {
-            id: "4",
-            status: "Compra",
-            estabelecimento: "Lavação do Donizete",
-            valor: "R$45,00",
-            date: "02/08/2020"
-        },
-        {
-            id: "5",
-            status: "Compra",
-            estabelecimento: "Super Mercado Elizeu",
-            valor: "R$25,00",
-            date: "02/08/2020"
-        },
-        {
-            id: "6",
-            status: "Compra",
-            estabelecimento: "Livraria do Armando",
-            valor: "R$225,00",
-            date: "02/08/2020"
-        },
-        {
-            id: "7",
-            status: "Compra",
-            estabelecimento: "Magazine Luiza",
-            valor: "R$2125,00",
-            date: "02/08/2020"
-        },
-        {
-            id: "8",
-            status: "Compra",
-            estabelecimento: "Super Mercado Elizeu",
-            valor: "R$25,00",
-            date: "02/08/2020"
-        },
-        {
-            id: "9",
+    "1": {
+        nome: "Lucas",
+        saldoDisponivel: "2.500,50",
+        numeroConta: "899.215-5",
+        lastTransaction: {
             status: "Transferência",
             estabelecimento: "Lucas Martins de Castro",
-            valor: "R$1.000,00",
-            date: "02/08/2020"
-        }
-    ]
+            valor: "R$1.000,00"
+        },
+    },
+    "2": {
+        nome: "Joao",
+        saldoDisponivel: "500,50",
+        numeroConta: "888.888-6",
+        lastTransaction: {
+            status: "Transferência",
+            estabelecimento: "Lucas Martins de Castro",
+            valor: "R$1.000,00"
+        },
+    },
+}
+export const extrato = {
+    "888.888-6": {
+        extratos:
+            [
+                {
+                    id: "1",
+                    status: "Compra",
+                    estabelecimento: "Super Mercado Elizeu",
+                    valor: "R$12,00",
+                    date: "02/08/2020"
+                },
+            ]
+    },
+
+    "899.215-5": {
+        extratos:
+            [
+                {
+                    id: "1",
+                    status: "Compra",
+                    estabelecimento: "Super Mercado Elizeu",
+                    valor: "R$12,00",
+                    date: "02/08/2020"
+                },
+                {
+                    id: "2",
+                    status: "Compra",
+                    estabelecimento: "Posto do Afonso",
+                    valor: "R$100,00",
+                    date: "02/08/2020"
+                },
+                {
+                    id: "3",
+                    status: "Depósito",
+                    estabelecimento: "Padaria do Irineu",
+                    valor: "R$22,00",
+                    date: "02/08/2020"
+                },
+                {
+                    id: "4",
+                    status: "Compra",
+                    estabelecimento: "Lavação do Donizete",
+                    valor: "R$45,00",
+                    date: "02/08/2020"
+                },
+                {
+                    id: "5",
+                    status: "Compra",
+                    estabelecimento: "Super Mercado Elizeu",
+                    valor: "R$25,00",
+                    date: "02/08/2020"
+                },
+                {
+                    id: "6",
+                    status: "Compra",
+                    estabelecimento: "Livraria do Armando",
+                    valor: "R$225,00",
+                    date: "02/08/2020"
+                },
+                {
+                    id: "7",
+                    status: "Compra",
+                    estabelecimento: "Magazine Luiza",
+                    valor: "R$2125,00",
+                    date: "02/08/2020"
+                },
+                {
+                    id: "8",
+                    status: "Compra",
+                    estabelecimento: "Super Mercado Elizeu",
+                    valor: "R$25,00",
+                    date: "02/08/2020"
+                },
+                {
+                    id: "9",
+                    status: "Transferência",
+                    estabelecimento: "Lucas Martins de Castro",
+                    valor: "R$1.000,00",
+                    date: "02/08/2020"
+                }
+            ]
+    }
 }
 
-export const login = {
-    email: "lucas",
-    password: "1234"
+export const logins = [
+    {
+        id: 1,
+        email: "lucas",
+        password: "1234",
+        foto: 'https://img.elo7.com.br/product/zoom/2A128B7/caricatura-individual-de-rosto-caricatura-menino.jpg',
+    },
+    {
+        id: 2,
+        email: "joao",
+        password: "1234",
+        foto: 'https://img.elo7.com.br/product/zoom/2A128B7/caricatura-individual-de-rosto-caricatura-menino.jpg',
+    },
+
+]
+
+export const getLogin = (email, password) => {
+    let loginSuccess;
+    logins.forEach((login) => {
+        if (login.email === email) {
+            if (login.password === password) {
+                loginSuccess = login
+            } else {
+                loginSuccess = "Error"
+            }
+        } else {
+            loginSuccess = "Error"
+        }
+    })
+
+    return loginSuccess;
 }
 
 export const contasCadastradas = [
@@ -106,3 +165,7 @@ export const contasCadastradas = [
         agencia: "3689"
     },
 ]
+
+export const fetchLogin = () => {
+    return login;
+}

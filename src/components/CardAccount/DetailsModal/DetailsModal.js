@@ -10,11 +10,15 @@ import {
 import styles from './styles'
 import { conta } from '../../../../res/data'
 import CardExtract from './CardExtract';
-import {textSaldoDisponivel} from '../../../../res/colors'
+import { textSaldoDisponivel } from '../../../../res/colors'
 import HeaderModal from '../../HeaderModal';
-import {icon_conta} from '../../../../res/icon_card'
+import { icon_conta } from '../../../../res/icon_card'
+import { fetchExtractByAccount } from '../../../dao/fetchAPI'
 
 function DetailsModal(props) {
+    const account = props.account
+    const extrato = fetchExtractByAccount(account.numeroConta)
+
     return (
         <View>
             <Modal
@@ -26,17 +30,17 @@ function DetailsModal(props) {
                 }}
             >
                 <View style={{ flex: 1 }}>
-                   <HeaderModal onClickHide={props.onClickHide} icon={icon_conta}/>
+                    <HeaderModal onClickHide={props.onClickHide} icon={icon_conta} />
                     <FlatList
                         refreshControl={console.log("Atualizado")}
-                        onRefresh={()=>{console.log("Atualizado")}}
+                        onRefresh={() => { console.log("Atualizado") }}
                         refreshing={false}
-                        data={conta.extratos}
+                        data={extrato.extratos}
                         keyExtractor={(item) => item.id}
                         ListHeaderComponent={
                             <View style={styles.modalView}>
-                                <Text style={{color: textSaldoDisponivel}}>Saldo disponível</Text>
-                                <Text style={styles.textStyle}>R$ {conta.saldoDisponivel}</Text>
+                                <Text style={{ color: textSaldoDisponivel }}>Saldo disponível</Text>
+                                <Text style={styles.textStyle}>R$ {account.saldoDisponivel}</Text>
                             </View>
                         }
                         renderItem={({ item }) =>
