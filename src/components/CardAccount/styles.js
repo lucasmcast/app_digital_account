@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
-    containerCardSaldo:{
-        flex:1,
+    containerCardSaldo: {
+        flex: 1,
         marginLeft: 15,
         marginRight: 15,
         height: "100%",
@@ -16,14 +16,14 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 1,
         shadowRadius: 10,
-        elevation: 24,
+        elevation: 26,
         position: "absolute",
-        top:0,
-        right:0,
-        left:0,
+        top: 0,
+        right: 0,
+        left: 0,
         zIndex: 9999,
     }
-    
+
 });
 
 export default styles;

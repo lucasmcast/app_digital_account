@@ -1,11 +1,12 @@
 import React from 'react';
-import { 
-  Main, 
-  LoginScreen, 
-  TransferScreen, 
+import {
+  Main,
+  LoginScreen,
+  TransferScreen,
   NumberRegisterScreen,
   FullNameScreen,
-  InsertValueScreen 
+  InsertValueScreen,
+  ConfirmTransfer
 } from './src/pages'
 import 'react-native-gesture-handler';
 import { NavigationContainer } from "@react-navigation/native"
@@ -41,8 +42,8 @@ export default function App() {
             },
           }}
         />
-        <Stack.Screen 
-          name="NumberRegister" 
+        <Stack.Screen
+          name="NumberRegister"
           component={NumberRegisterScreen}
           options={{
             headerShown: false,
@@ -57,7 +58,7 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="FullName" 
+          name="FullName"
           component={FullNameScreen}
           options={{
             headerShown: false,
@@ -72,8 +73,23 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="InsertValue" 
+          name="InsertValue"
           component={InsertValueScreen}
+          options={{
+            headerShown: false,
+            ...TransitionPresets.SlideFromRightIOS,
+            /* transitionSpec: {
+              open: config,
+              close: config,
+            }, */
+            gestureEnabled: true,
+            gestureResponseDistance: 20,
+            gestureDirection: "horizontal"
+          }}
+        />
+        <Stack.Screen
+          name="ConfirmTransfer"
+          component={ConfirmTransfer}
           options={{
             headerShown: false,
             ...TransitionPresets.SlideFromRightIOS,

@@ -3,10 +3,9 @@ import GenericScreen from '../../components/GenericScreen'
 import { Text } from 'react-native'
 
 function InsertValueScreen({ navigation, route }) {
-    console.log(route)
+
     const onClickButton = (inputText) => () => {
-        console.log(numberRegister, " ", inputText)
-        /* navigation.navigate("FullName", {numberRegister: numberRegister, name: inputText}) */
+        navigation.navigate("ConfirmTransfer", { conta: route.params.item, value: inputText })
     }
     return (
         <Fragment>

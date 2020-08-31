@@ -1,13 +1,14 @@
 import { StyleSheet } from "react-native"
-import {primaryColor} from '../../../res/colors'
+import { primaryColor } from '../../../res/colors'
 
 const styles = StyleSheet.create({
-    containerMain:{
+    containerMain: {
         backgroundColor: primaryColor,
-        height: "100%"
+        height: "100%",
+        flexDirection: "column-reverse"
     },
-    containerContent:{
-        flex:1,
+    containerContent: {
+        flex: 1,
         maxHeight: 400
     }
 });

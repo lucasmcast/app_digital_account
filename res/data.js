@@ -21,7 +21,7 @@ export const conta = {
             status: "Compra",
             estabelecimento: "Posto do Afonso",
             valor: "R$100,00",
-            date: "02/08/2020" 
+            date: "02/08/2020"
         },
         {
             id: "3",
@@ -75,7 +75,7 @@ export const conta = {
     ]
 }
 
-export const login  = {
+export const login = {
     email: "lucas",
     password: "1234"
 }

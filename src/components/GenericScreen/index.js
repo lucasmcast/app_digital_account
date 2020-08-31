@@ -16,20 +16,21 @@ function GenericScreen(props) {
             <HeaderModal onClickHide={props.onClickHide}></HeaderModal>
             <View style={styles.container}>
                 <Text style={styles.textHeader}>{props.textHeader}</Text>
-                <TextInput 
-                    autoFocus={true} 
+                <TextInput
+                    autoFocus={true}
                     style={styles.textInput}
                     value={inputText}
-                    onChangeText={(text)=> setInputText(text)}
+                    onChangeText={(text) => setInputText(text)}
                 />
+                <Text>Saldo disponível: {props.saldoDisponivel}</Text>
             </View>
             <Button
-                name={props.nameButton} 
+                name={props.nameButton}
                 onClick={
-                    props.onClickButton ? 
-                    props.onClickButton(inputText) : 
-                    ()=>console.log(inputText)}
-                style={styles.button}/>
+                    props.onClickButton ?
+                        props.onClickButton(inputText) :
+                        () => console.log(inputText)}
+                style={styles.button} />
         </Fragment>
     )
 
