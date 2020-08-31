@@ -3,8 +3,8 @@ import {textSaldoDisponivel} from '../../../../res/colors'
 
 const styles = StyleSheet.create({
     containerContentCard:{
-        margin: 30,
-        alignSelf: "center"
+        margin: 20,
+        alignSelf: "center",
     },
     textSaldo:{
         fontSize: 40

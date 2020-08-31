@@ -5,9 +5,13 @@ const styles = StyleSheet.create({
     containerCardFeatures: {
         flexDirection: "row",
         alignItems: "center",
-        marginBottom: 40
+        justifyContent: "center",
+        margin: 15,
+        marginTop: 30,
+        marginBottom: 40,
     },
     containerItemsCards: {
+        flex: 1,
         alignItems: "center",
         margin: 10,
         borderRadius: 10,
@@ -15,13 +19,12 @@ const styles = StyleSheet.create({
         borderColor: highLightsColor,
         padding: 5,
         backgroundColor: secondColor,
-        width: 80,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 6,
         },
-        elevation: 25
+        elevation: 25,
     },
     
     imageItemsCards: {

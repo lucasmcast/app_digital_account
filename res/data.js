@@ -1,10 +1,13 @@
 export const conta = {
+    nome: "Lucas",
+    foto: 'https://img.elo7.com.br/product/zoom/2A128B7/caricatura-individual-de-rosto-caricatura-menino.jpg',
     saldoDisponivel: "2.500,50",
     lastTransaction: {
         status: "Transferência",
         estabelecimento: "Lucas Martins de Castro",
         valor: "R$1.000,00"
     },
+    login: login,
     extratos: [
         {
             id: "1",

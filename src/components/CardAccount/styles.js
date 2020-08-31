@@ -3,10 +3,9 @@ import { StyleSheet } from "react-native"
 const styles = StyleSheet.create({
     containerCardSaldo:{
         flex:1,
-        maxHeight: 400,
-        zIndex:5,
-        margin: 20,
-        width: "90%",
+        marginLeft: 15,
+        marginRight: 15,
+        height: "100%",
         borderRadius: 20,
         backgroundColor: "#FFFFFF",
         justifyContent: "space-between",
@@ -19,9 +18,10 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 24,
         position: "absolute",
-        top:99,
+        top:0,
         right:0,
         left:0,
+        zIndex: 9999,
     }
     
 });

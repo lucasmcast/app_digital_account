@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     },
     containerIconConta:{
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
     },
 });
 

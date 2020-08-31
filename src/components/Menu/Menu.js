@@ -1,11 +1,12 @@
 import React from  'react';
 import {ScrollView, View} from 'react-native'
 import MenuItems from './MenuItems';
+import styles from './styles'
 
 function TabsMenu(props){
     return(
-        <View>
-            <MenuItems></MenuItems>
+        <View style={styles.containerMenu}>
+            <MenuItems navigation={props.navigation}></MenuItems>
         </View>
     )
 }
