@@ -5,3 +5,8 @@ export { default as NumberRegisterScreen } from './TransferScreen/NumberRegister
 export { default as FullNameScreen } from './TransferScreen/FullNameScreen'
 export { default as InsertValueScreen } from './TransferScreen/InsertValueScreen'
 export { default as ConfirmTransfer } from './TransferScreen/ConfirmTransfer'
+export { default as BanksScreen} from './TransferScreen/BanksScreen'
+export { default as NumberAgencyScreen} from './TransferScreen/NumberAgencyScreen'
+export { default as NumberAccountScreen} from './TransferScreen/NumberAccountScreen'
+export { default as DepositScreen } from './DepositScreen'
+export { default as PaymentScreen } from './PaymentScreen'

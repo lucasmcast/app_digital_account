@@ -45,7 +45,7 @@ function TransferScreen({navigation, login}) {
                 onRefresh={() => { console.log("Atualizado") }}
                 refreshing={false}
                 data={contasCadastradas}
-                keyExtractor={(item) => item.cpf}
+                keyExtractor={(item) => item.numberRegister}
                 renderItem={({ item }) =>
                     <CardsAccounts navigation={navigation} item={item} />
                 }

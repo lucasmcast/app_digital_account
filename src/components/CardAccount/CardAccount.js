@@ -8,6 +8,7 @@ import DetailsModal from './DetailsModal/DetailsModal'
 import { Animated } from 'react-native'
 import { PanGestureHandler, State } from 'react-native-gesture-handler'
 import { connect } from 'react-redux'
+import {formatMoney} from '../../utils'
 
 function CardAccount({ dataAccount }) {
     let offset = 0;
@@ -79,7 +80,7 @@ function CardAccount({ dataAccount }) {
                 <TouchableOpacity
                     onPress={() => setModalVisible(true)}
                 >
-                    <ContentCard item={dataAccount.saldoDisponivel}></ContentCard>
+                    <ContentCard item={formatMoney(dataAccount.saldoDisponivel)}></ContentCard>
                 </TouchableOpacity>
                 <FooterCard item={dataAccount.lastTransaction}></FooterCard>
 

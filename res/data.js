@@ -1,24 +1,23 @@
-import Login from "../src/pages/LoginScreen/Login";
 
 export const conta = {
     "1": {
         nomeCompleto: "Lucas Martins de Castro",
-        saldoDisponivel: "2.500,50",
+        saldoDisponivel: 2500.50,
         numeroConta: "899.215-5",
         lastTransaction: {
             status: "Transferência",
             estabelecimento: "Lucas Martins de Castro",
-            valor: "R$1.000,00"
+            valor: 1000
         },
     },
     "2": {
         nomeCompleto: "Joao da Silva",
-        saldoDisponivel: "500,50",
+        saldoDisponivel: 500.50,
         numeroConta: "888.888-6",
         lastTransaction: {
             status: "Compra",
             estabelecimento: "Super Mercado da Monica",
-            valor: "R$12,00"
+            valor: 12
         },
     },
 }
@@ -30,7 +29,7 @@ export const extrato = {
                     id: "1",
                     status: "Compra",
                     estabelecimento: "Super Mercado da Monica",
-                    valor: "R$12,00",
+                    valor: 12,
                     date: "02/08/2020"
                 },
             ]
@@ -43,63 +42,63 @@ export const extrato = {
                     id: "1",
                     status: "Compra",
                     estabelecimento: "Super Mercado Elizeu",
-                    valor: "R$12,00",
+                    valor: 12,
                     date: "02/08/2020"
                 },
                 {
                     id: "2",
                     status: "Compra",
                     estabelecimento: "Posto do Afonso",
-                    valor: "R$100,00",
+                    valor: 100,
                     date: "02/08/2020"
                 },
                 {
                     id: "3",
                     status: "Depósito",
                     estabelecimento: "Padaria do Irineu",
-                    valor: "R$22,00",
+                    valor: 22,
                     date: "02/08/2020"
                 },
                 {
                     id: "4",
                     status: "Compra",
                     estabelecimento: "Lavação do Donizete",
-                    valor: "R$45,00",
+                    valor: 45,
                     date: "02/08/2020"
                 },
                 {
                     id: "5",
                     status: "Compra",
                     estabelecimento: "Super Mercado Elizeu",
-                    valor: "R$25,00",
+                    valor: 25,
                     date: "02/08/2020"
                 },
                 {
                     id: "6",
                     status: "Compra",
                     estabelecimento: "Livraria do Armando",
-                    valor: "R$225,00",
+                    valor: 225,
                     date: "02/08/2020"
                 },
                 {
                     id: "7",
                     status: "Compra",
                     estabelecimento: "Magazine Luiza",
-                    valor: "R$2125,00",
+                    valor: 2125,
                     date: "02/08/2020"
                 },
                 {
                     id: "8",
                     status: "Compra",
                     estabelecimento: "Super Mercado Elizeu",
-                    valor: "R$25,00",
+                    valor: 25,
                     date: "02/08/2020"
                 },
                 {
                     id: "9",
                     status: "Transferência",
                     estabelecimento: "Lucas Martins de Castro",
-                    valor: "R$1.000,00",
+                    valor: 1000,
                     date: "02/08/2020"
                 }
             ]
@@ -141,26 +140,26 @@ export const contasCadastradas = {
     "1": [
         {
             nomeFavorecido: "Lucas Martins de Castro",
-            numeroConta: "02045369",
-            cpf: "089.369.789-92",
+            numeroConta: "02.452-6",
+            numberRegister: "089.369.789-92",
             agencia: "3689"
         },
         {
             nomeFavorecido: "Sandro Afonso da Silva",
-            numeroConta: "02045358",
-            cpf: "089.369.875-78",
+            numeroConta: "02.078-5",
+            numberRegister: "089.369.875-78",
             agencia: "3689"
         },
         {
             nomeFavorecido: "Carlos da Silveira",
-            numeroConta: "02044789",
-            cpf: "089.369.789-98",
+            numeroConta: "02.047-9",
+            numberRegister: "089.369.789-98",
             agencia: "3689"
         },
         {
             nomeFavorecido: "Augusto Charles Silva",
-            numeroConta: "02032541",
-            cpf: "089.369.1478-56",
+            numeroConta: "02.035-1",
+            numberRegister: "089.369.1478-56",
             agencia: "3689"
         },
     ],
@@ -171,3 +170,18 @@ export const contasCadastradas = {
 export const fetchLogin = () => {
     return login;
 }
+
+export const banks = [
+    {
+        nome: "Banco Santander",
+        numeroBanco: 580
+    },
+    {
+        nome: "Banco do Brasil",
+        numeroBanco: 380
+    },
+    {
+        nome: "Tiziu Bank",
+        numeroBanco: 600
+    }
+]

@@ -7,7 +7,7 @@ import styles from './styles'
 function CardsAccounts({ item, navigation }) {
     return (
         <TouchableOpacity
-            onPress={() => navigation.navigate("InsertValue", { item: item })}
+            onPress={() => navigation.navigate("InsertValue", { conta: item })}
             style={styles.container}
         >
             <Text style={styles.textAccount}>{item.nomeFavorecido}</Text>

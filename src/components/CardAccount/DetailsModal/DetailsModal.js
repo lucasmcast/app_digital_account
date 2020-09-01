@@ -14,6 +14,7 @@ import { textSaldoDisponivel } from '../../../../res/colors'
 import HeaderModal from '../../HeaderModal';
 import { icon_conta } from '../../../../res/icon_card'
 import { fetchExtractByAccount } from '../../../dao/fetchAPI'
+import {formatMoney} from '../../../utils'
 
 function DetailsModal(props) {
     const account = props.account
@@ -40,7 +41,7 @@ function DetailsModal(props) {
                         ListHeaderComponent={
                             <View style={styles.modalView}>
                                 <Text style={{ color: textSaldoDisponivel }}>Saldo disponível</Text>
-                                <Text style={styles.textStyle}>R$ {account.saldoDisponivel}</Text>
+                                <Text style={styles.textStyle}>R$ {formatMoney(account.saldoDisponivel)}</Text>
                             </View>
                         }
                         renderItem={({ item }) =>

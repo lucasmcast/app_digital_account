@@ -6,7 +6,12 @@ import {
   NumberRegisterScreen,
   FullNameScreen,
   InsertValueScreen,
-  ConfirmTransfer
+  ConfirmTransfer,
+  BanksScreen,
+  NumberAccountScreen,
+  NumberAgencyScreen,
+  DepositScreen,
+  PaymentScreen
 } from './src/pages'
 import 'react-native-gesture-handler';
 import configureStore from './src/redux/store'
@@ -109,9 +114,87 @@ export default function App() {
                 gestureDirection: "horizontal"
               }}
             />
+            <Stack.Screen
+              name="BanksScreen"
+              component={BanksScreen}
+              options={{
+                headerShown: false,
+                ...TransitionPresets.SlideFromRightIOS,
+                /* transitionSpec: {
+                  open: config,
+                  close: config,
+                }, */
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal"
+              }}
+            />
+            <Stack.Screen
+              name="NumberAgencyScreen"
+              component={NumberAgencyScreen}
+              options={{
+                headerShown: false,
+                ...TransitionPresets.SlideFromRightIOS,
+                /* transitionSpec: {
+                  open: config,
+                  close: config,
+                }, */
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal"
+              }}
+            />
+            <Stack.Screen
+              name="NumberAccountScreen"
+              component={NumberAccountScreen}
+              options={{
+                headerShown: false,
+                ...TransitionPresets.SlideFromRightIOS,
+                /* transitionSpec: {
+                  open: config,
+                  close: config,
+                }, */
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal"
+              }}
+            />
+            <Stack.Screen
+              name="DepositScreen"
+              component={DepositScreen}
+              options={{
+                headerShown: false,
+                /* 
+                ...TransitionPresets.SlideFromRightIOS, */
+                transitionSpec: {
+                  open: config,
+                  close: config,
+                },/* 
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal" */
+              }}
+            />
+            <Stack.Screen
+              name="PaymentScreen"
+              component={PaymentScreen}
+              options={{
+                headerShown: false,
+                /* 
+                ...TransitionPresets.SlideFromRightIOS, */
+                transitionSpec: {
+                  open: config,
+                  close: config,
+                },/* 
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal" */
+              }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>
     </Provider>
   );
 }
+BanksScreen

@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Image, Text } from 'react-native'
 import styles from './styles'
 import { icon_cartao, icon_transferBlack, icon_depositBlack } from '../../../../../res/icon_card'
-
+import {formatMoney} from '../../../../utils'
 function CardExtract({ item }) {
 
     let icon_transaction;
@@ -33,7 +33,7 @@ function CardExtract({ item }) {
             <View style={styles.containerDetails}>
                 <Text style={styles.textStatus}>{item.status}</Text>
                 <Text>{item.estabelecimento}</Text>
-                <Text>{item.valor}</Text>
+                <Text>R$ {formatMoney(item.valor)}</Text>
             </View>
             <Text style={styles.textData}>{item.date}</Text>
 

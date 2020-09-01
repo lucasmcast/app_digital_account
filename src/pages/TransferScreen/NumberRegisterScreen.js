@@ -10,6 +10,7 @@ function NumberRegister({ navigation }) {
 
     return (
         <GenericScreen
+            variant="numberRegister"
             onClickHide={() => navigation.navigate("TransferScreen")}
             textHeader="Qual o numero de CPF ou CNPJ?"
             onClickButton={onClickButton}

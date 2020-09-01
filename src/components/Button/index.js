@@ -4,11 +4,20 @@ import styles from './styles'
 
 function Button(props){
     return(
-        <TouchableOpacity 
+        <TouchableOpacity
+            activeOpacity={props.disabled ? 1 : 0.3} 
+            /* onPress={!disabled && onPress}  */
             style={styles.containerButton}
-            onPress={props.onClick ? props.onClick : () => console.log("Clicou")}
+            onPress={
+                props.disabled ? () => {}
+                : props.onClick 
+                ? props.onClick 
+                : () => console.log("clicou")}
             >
-            <Text style={styles.textButton}>{props.name ? props.name : "Button"}</Text>
+            <Text style={
+                [styles.textButton, 
+                props.disabled ? {color: "gray"}:{}]}>{props.name ? props.name : "Button"}
+            </Text>
         </TouchableOpacity>
     )
 }

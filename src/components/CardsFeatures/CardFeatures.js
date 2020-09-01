@@ -3,13 +3,12 @@ import styles from './styles'
 import {View} from 'react-native'
 import {CardDeposit, CardTransfer, CardPay} from './ItemsCards'
 
-function CardsActions(props){
-    console.log(props)
+function CardsActions({navigation}){
     return(
         <View style={styles.containerCardFeatures}>
-            <CardDeposit></CardDeposit>
-            <CardTransfer navigation={props.navigation}></CardTransfer>
-            <CardPay></CardPay>
+            <CardDeposit navigation={navigation}></CardDeposit>
+            <CardTransfer navigation={navigation}></CardTransfer>
+            <CardPay navigation={navigation}></CardPay>
         </View>
     )
 }

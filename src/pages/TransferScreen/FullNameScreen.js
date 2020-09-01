@@ -3,12 +3,10 @@ import GenericScreen from '../../components/GenericScreen'
 
 function FullNameScreen({ navigation, route }) {
     const conta = route.params.conta
-    console.log("Conta", route)
-
     const onClickButton = (inputText) => () => {
         conta.nomeFavorecido = inputText
         console.log(conta, " ", inputText)
-        /* navigation.navigate("FullName", {numberRegister: numberRegister, name: inputText}) */
+        navigation.navigate("BanksScreen", {conta: conta})
     }
     return (
         <GenericScreen

@@ -4,7 +4,6 @@ import { Image, TouchableOpacity, Text } from 'react-native'
 import { icon_transfer } from '../../../../res/icon_card'
 
 function CardTransfer(props) {
-    console.log(props)
     return (
         <Fragment>
             <TouchableOpacity 

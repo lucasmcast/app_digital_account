@@ -12,7 +12,7 @@ function HeaderAbstract(props) {
             <View style={styles.container}>
 
                 <View style={styles.containerText}>
-                    <Text style={styles.textHeader}>Confirmar Transferencia</Text>
+                    <Text style={styles.textHeader}>{props.title}</Text>
                 </View>
 
                 <View style={styles.containerIcon}>
