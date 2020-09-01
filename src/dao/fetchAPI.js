@@ -3,7 +3,7 @@
  * @since 1.0.0
  */
 
-import { login, conta, extrato, getLogin } from "../../res/data";
+import { conta, extrato, getLogin, contasCadastradas} from "../../res/data";
 
 /**
  * Example Request
@@ -31,4 +31,9 @@ export const fetchDataAccountById = (id) => {
 export const fetchExtractByAccount = (numberAccount) => {
     let extract = extrato[numberAccount]
     return extract
+}
+
+export const fetchAccountsRegistedById = (id) =>{
+    let accounts = contasCadastradas[id.toString()]
+    return accounts
 }

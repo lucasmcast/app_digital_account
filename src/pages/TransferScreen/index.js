@@ -7,14 +7,17 @@ import {
 } from 'react-native'
 
 import styles from './styles'
-import { contasCadastradas } from '../../../res/data'
 import CardsAccounts from './CardsAccounts';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { primaryColor } from '../../../res/colors'
-import { icon_transfer } from '../../../res/icon_card'
 import HeaderModal from '../../components/HeaderModal';
+import {connect} from 'react-redux'
+import {fetchAccountsRegistedById} from '../../../src/dao/fetchAPI'
 
-function TransferScreen({navigation}) {
+function TransferScreen({navigation, login}) {
+
+    const contasCadastradas = fetchAccountsRegistedById(login.id)
+    
     return (
         <View >
             <HeaderModal onClickHide={()=> navigation.navigate("Main")}/>
@@ -52,4 +55,10 @@ function TransferScreen({navigation}) {
 
 }
 
-export default TransferScreen;
+const mapStateToProps = (state) => {
+    return(
+        {login: state.rootLogin.login}
+    )
+}
+
+export default connect(mapStateToProps)(TransferScreen);

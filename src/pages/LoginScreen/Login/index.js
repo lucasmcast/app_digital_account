@@ -15,8 +15,7 @@ function Login(props) {
 
     function validateUser(login) {
         if (login !== "Error") {
-            console.log("Login com sucesso", login)
-            props.onPress()
+            props.onPress(login)
             props.addLogin(login)
         } else {
             alert("Erro no Login")
@@ -29,12 +28,14 @@ function Login(props) {
             <TextInput
                 style={styles.inputLogin}
                 onChangeText={(text) => setEmail(text)}
+                value={email}
             />
             <Text style={styles.textLogin}>Senha:</Text>
             <TextInput
                 secureTextEntry={true}
                 style={styles.inputLogin}
                 onChangeText={(text) => setPassword(text)}
+                value={password}
             />
             <View style={styles.containerButtons}>
                 <Switch
@@ -50,6 +51,8 @@ function Login(props) {
                     onPress={() => {
                         let login = fetchLogin(email, password);
                         validateUser(login)
+                        setEmail("")
+                        setPassword("")
                     }}
                 >
                     <Text style={{ color: "#FFF", fontSize: 18, fontWeight: "bold" }}>Login</Text>
