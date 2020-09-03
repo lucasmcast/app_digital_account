@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
         margin: 10
     },
     containerIconHeaderModal:{
+        padding:10,
         flexDirection: "row",
         alignItems: "center"
     },

@@ -5,7 +5,7 @@ import { fetchLogin } from '../../../dao/fetchAPI'
 import { addLogin } from '../../../../src/redux/actions'
 import { connect } from 'react-redux'
 
-function Login(props) {
+function LoginContainer(props) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [isEnabled, setIsEnabled] = useState(false);
@@ -63,4 +63,4 @@ function Login(props) {
     )
 }
 
-export default connect(null, { addLogin })(Login);
+export default connect(null, { addLogin })(LoginContainer);

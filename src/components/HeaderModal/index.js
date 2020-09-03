@@ -3,6 +3,7 @@ import styles from './styles'
 import { Image, TouchableOpacity } from 'react-native'
 import { icon_backScreen } from '../../../res/icon_card'
 import { highLightsColor } from '../../../res/colors'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 function HeaderModal(props) {
     return (
@@ -16,7 +17,7 @@ function HeaderModal(props) {
                 props.onClickHide()
             }}
         >
-            <Image style={styles.iconBackScreen} source={icon_backScreen}></Image>
+            <Icon name="arrow-back" size={30} color={props.color ? highLightsColor: "black"}/>
             <Image style={styles.iconHeader} source={props.icon ? props.icon : ""}></Image>
         </TouchableOpacity>
     )

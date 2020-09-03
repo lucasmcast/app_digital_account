@@ -6,8 +6,19 @@
  * @see https://redux-saga.js.org/
  */
 
+/* import {fetchLogin} from '../dao/fetchAPI'
+import { GET_LOGIN } from './actionsTypes'; */
 
+/* function* fetchLogin(action){
+    try{
+        const news = yield call(fetchLogin, action.login);
+        yield put(showNews(news));
+    }catch(e){
+        yield console.log(e)
+    }
+}
+ */
 function* mySaga() {
-
+    /* yield takeEvery(GET_LOGIN, fetchLogin); */
 }
 export default mySaga;

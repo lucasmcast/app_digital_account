@@ -4,7 +4,14 @@
  * @since 1.0.0
  */
 
-import { ADD_LOGIN, ADD_DATA_ACCOUNT, DEL_LOGIN } from "./actionsTypes";
+import { ADD_LOGIN, ADD_DATA_ACCOUNT, DEL_LOGIN, GET_LOGIN } from "./actionsTypes";
+
+export const login = (email, password) => ({
+    type: GET_LOGIN,
+    payload: {
+        email, password
+    }
+})
 
 export const addLogin = (login) => ({
     type: ADD_LOGIN,

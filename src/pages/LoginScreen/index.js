@@ -3,7 +3,7 @@ import { View, Image, StatusBar } from 'react-native'
 import styles from './styles'
 import { womanLogin } from '../../../res/imagesLogin'
 import WelcomeLogin from './WelcomeLogin'
-import Login from './Login'
+import LoginContainer from './Login'
 import FooterLogin from './FooterLogin'
 
 function LoginScreen({ navigation }) {
@@ -14,9 +14,9 @@ function LoginScreen({ navigation }) {
                 source={womanLogin}>
             </Image>
             <WelcomeLogin></WelcomeLogin>
-            <Login
+            <LoginContainer
                 onPress={(login) => { navigation.navigate("Main", { login: login }) }}
-            ></Login>
+            ></LoginContainer>
             <FooterLogin></FooterLogin>
         </View >
     )

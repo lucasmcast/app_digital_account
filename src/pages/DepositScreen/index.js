@@ -13,7 +13,11 @@ function DepositScreen({ navigation }) {
                 title="Realizar Deposito"
             />
             <View style={styles.container}>
-                <TouchableOpacity style={styles.containerButton}>
+                <TouchableOpacity 
+                    onPress={()=> navigation.navigate("AccountDetails")}
+                    style={styles.containerButton}
+                
+                >
                     <Text style={styles.textContainer}>Dados da Conta</Text>
                     <Icon name="keyboard-arrow-right" color={primaryColor} size={30} />
                 </TouchableOpacity>

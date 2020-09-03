@@ -7,3 +7,4 @@ export {default as icon_transferBlack} from './images/icons/icon_transfer_black.
 export {default as icon_backScreen} from './images/icons/icon_back_screen.png'
 export {default as icon_cartao} from './images/icons/icon_cartao.png'
 export {default as icon_seta} from './images/icons/icon_seta.png'
+export {default as icon_barCode} from './images/bar_code.png'

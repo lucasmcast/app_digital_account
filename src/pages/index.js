@@ -10,3 +10,4 @@ export { default as NumberAgencyScreen} from './TransferScreen/NumberAgencyScree
 export { default as NumberAccountScreen} from './TransferScreen/NumberAccountScreen'
 export { default as DepositScreen } from './DepositScreen'
 export { default as PaymentScreen } from './PaymentScreen'
+export { default as AccountDetails} from './DepositScreen/AccountDetails'

@@ -11,7 +11,8 @@ import {
   NumberAccountScreen,
   NumberAgencyScreen,
   DepositScreen,
-  PaymentScreen
+  PaymentScreen,
+  AccountDetails
 } from './src/pages'
 import 'react-native-gesture-handler';
 import configureStore from './src/redux/store'
@@ -178,6 +179,22 @@ export default function App() {
             <Stack.Screen
               name="PaymentScreen"
               component={PaymentScreen}
+              options={{
+                headerShown: false,
+                /* 
+                ...TransitionPresets.SlideFromRightIOS, */
+                transitionSpec: {
+                  open: config,
+                  close: config,
+                },/* 
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal" */
+              }}
+            />
+            <Stack.Screen
+              name="AccountDetails"
+              component={AccountDetails}
               options={{
                 headerShown: false,
                 /* 
