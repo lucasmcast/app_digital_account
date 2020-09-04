@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native';
+import { View, Text, Share } from 'react-native';
 import HeaderAbstract from '../../../components/HeaderAbstract';
 import Button from '../../../components/Button';
 import ItemConfirm from './ItemConfirm';
@@ -8,6 +8,26 @@ import styles from './styles';
 function ConfirmTransfer({ navigation, route }) {
     const conta = route.params.conta
     const value = route.params.value
+
+    const onShare = async () => {
+        try {
+            const result = await Share.share({
+                message:
+                    `Realizado Pagamento no valor de R$${value},\n para conta ${conta.numeroConta}, em nome de ${conta.nomeFavorecido}`,
+            });
+            if (result.action === Share.sharedAction) {
+                if (result.activityType) {
+                    navigation.navigate("Main")
+                } else {
+                    console.log("Fechou")
+                }
+            } else if (result.action === Share.dismissedAction) {
+               
+            }
+        } catch (error) {
+            alert(error.message);
+        }
+    };
     return (
         <View style={styles.container}>
             <HeaderAbstract 
@@ -22,8 +42,8 @@ function ConfirmTransfer({ navigation, route }) {
                 <ItemConfirm icon="cash" text={`R$ ${value}`}></ItemConfirm>
             </View>
             <Button 
-                name="Confirmar"
-                onClick={() => navigation.navigate("Main")}    
+                name="Compartilhar"
+                onClick={() => onShare()}    
             >
 
             </Button>

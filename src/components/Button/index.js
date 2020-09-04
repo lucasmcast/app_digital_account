@@ -14,8 +14,7 @@ function Button(props){
                 ? props.onClick 
                 : () => console.log("clicou")}
             >
-            <Text style={
-                [styles.textButton, 
+            <Text style={             [styles.textButton, 
                 props.disabled ? {color: "gray"}:{}]}>{props.name ? props.name : "Button"}
             </Text>
         </TouchableOpacity>

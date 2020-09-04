@@ -81,7 +81,7 @@ function PaymentScreen({ navigation, saldo, updateBalance }) {
                     onClick={()=> {
                         if(moneyField !== 0 & barCode !== ''){
                             updateBalance(1, moneyField)
-                            navigation.navigate("Main")
+                            navigation.navigate("ReceiptPayment", {value: moneyField})
                         }else if(moneyField === 0){
                             Alert.alert("Digite um valor válido")   
                         }else if(barCode ===''){

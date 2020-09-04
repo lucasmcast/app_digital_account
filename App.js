@@ -13,7 +13,8 @@ import {
   DepositScreen,
   PaymentScreen,
   AccountDetails,
-  ToDeposit
+  ToDeposit,
+  ReceiptPayment
 } from './src/pages'
 import 'react-native-gesture-handler';
 import store from './src/redux/store'
@@ -216,6 +217,20 @@ export default function App() {
                 headerShown: false,
                 
                 ...TransitionPresets.SlideFromRightIOS,
+                transitionSpec: {
+                  open: config,
+                  close: config,
+                },/* 
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal" */
+              }}
+            />
+            <Stack.Screen
+              name="ReceiptPayment"
+              component={ReceiptPayment}
+              options={{
+                headerShown: false,
                 transitionSpec: {
                   open: config,
                   close: config,
