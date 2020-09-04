@@ -1,5 +1,6 @@
+import {formatStringDate, getMonthString} from '../src/utils'
 
-export const conta = {
+export const contas = {
     "1": {
         nomeCompleto: "Lucas Martins de Castro",
         saldoDisponivel: 2500.50,
@@ -30,7 +31,7 @@ export const extrato = {
                     status: "Compra",
                     estabelecimento: "Super Mercado da Monica",
                     valor: 12,
-                    date: "02/08/2020"
+                    date: "2020-08-02"
                 },
             ]
     },
@@ -43,63 +44,63 @@ export const extrato = {
                     status: "Compra",
                     estabelecimento: "Super Mercado Elizeu",
                     valor: 12,
-                    date: "02/08/2020"
+                    date: "2020-08-02"
                 },
                 {
                     id: "2",
                     status: "Compra",
                     estabelecimento: "Posto do Afonso",
                     valor: 100,
-                    date: "02/08/2020"
+                    date: "2020-08-02"
                 },
                 {
                     id: "3",
                     status: "Depósito",
                     estabelecimento: "Padaria do Irineu",
                     valor: 22,
-                    date: "02/08/2020"
+                    date: "2020-09-02"
                 },
                 {
                     id: "4",
                     status: "Compra",
                     estabelecimento: "Lavação do Donizete",
                     valor: 45,
-                    date: "02/08/2020"
+                    date: "2020-09-02"
                 },
                 {
                     id: "5",
                     status: "Compra",
                     estabelecimento: "Super Mercado Elizeu",
                     valor: 25,
-                    date: "02/08/2020"
+                    date: "2020-08-02"
                 },
                 {
                     id: "6",
                     status: "Compra",
                     estabelecimento: "Livraria do Armando",
                     valor: 225,
-                    date: "02/08/2020"
+                    date: "2020-07-02"
                 },
                 {
                     id: "7",
                     status: "Compra",
                     estabelecimento: "Magazine Luiza",
                     valor: 2125,
-                    date: "02/08/2020"
+                    date: "2020-07-02"
                 },
                 {
                     id: "8",
                     status: "Compra",
                     estabelecimento: "Super Mercado Elizeu",
                     valor: 25,
-                    date: "02/08/2020"
+                    date: "2020-08-02"
                 },
                 {
                     id: "9",
                     status: "Transferência",
                     estabelecimento: "Lucas Martins de Castro",
                     valor: 1000,
-                    date: "02/08/2020"
+                    date: "2020-08-02"
                 }
             ]
     }
@@ -123,18 +124,7 @@ export const logins = [
 
 ]
 
-export const getLogin = (email, password) => {
-    let index = logins.findIndex((login) => { return login.email === email })
-    if (index >= 0) {
-        if (logins[index].password === password) {
-            return logins[index]
-        } else {
-            return "Error"
-        }
-    }else{
-        return "Error"
-    }
-}
+
 
 export const contasCadastradas = {
     "1": [
@@ -164,11 +154,7 @@ export const contasCadastradas = {
         },
     ],
     "2": []
-    
-}
 
-export const fetchLogin = () => {
-    return login;
 }
 
 export const banks = [
@@ -185,3 +171,52 @@ export const banks = [
         numeroBanco: 600
     }
 ]
+
+export const getLogin = (email, password) => {
+    let index = logins.findIndex((login) => { return login.email === email })
+    if (index >= 0) {
+        if (logins[index].password === password) {
+            return logins[index]
+        } else {
+            return "Error"
+        }
+    } else {
+        return "Error"
+    }
+}
+
+
+export const getExtractByAccountAndDate = (account, date) => {
+    let dateToday = new Date()
+    let stringDateToday = formatStringDate(dateToday)
+    let stringDate = formatStringDate(date)
+    console.log(getMonthString(stringDateToday))
+
+    if(stringDate === stringDateToday){
+        return extrato[account].extratos
+    }else{
+        let extractForDate = []
+
+        let extracts = extrato[account].extratos
+
+        extracts.forEach((extract) => {
+            let dateByAccount = extract.date
+            if(getMonthString(dateByAccount) === getMonthString(stringDate)){
+                extractForDate.push(extract)
+                console.log(extractForDate)
+            }
+
+        });
+        
+        return extractForDate
+    }
+    
+}
+
+export const transaction = (type, idAccount, value) => {
+    let account = contas[idAccount.toString()]
+    if(type === 1){
+        account.saldoDisponivel -= value
+        contas[id.toString()] = account
+    }
+}

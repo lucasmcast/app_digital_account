@@ -10,7 +10,7 @@ function DepositScreen({ navigation }) {
         <Fragment>
             <HeaderAbstract
                 onClickHide={() => navigation.navigate("Main")}
-                title="Realizar Deposito"
+                title="Realizar Depósito"
             />
             <View style={styles.container}>
                 <TouchableOpacity 
@@ -21,8 +21,10 @@ function DepositScreen({ navigation }) {
                     <Text style={styles.textContainer}>Dados da Conta</Text>
                     <Icon name="keyboard-arrow-right" color={primaryColor} size={30} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.containerButton}>
-                    <Text style={styles.textContainer}>Gerar Boleto</Text>
+                <TouchableOpacity 
+                    onPress={()=> navigation.navigate("ToDeposit")}
+                    style={styles.containerButton}>
+                    <Text style={styles.textContainer}>Efetuar Depósito</Text>
                     <Icon name="keyboard-arrow-right" color={primaryColor} size={30} />
                 </TouchableOpacity>
             </View>

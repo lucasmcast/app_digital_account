@@ -8,7 +8,7 @@ function CardsActions({navigation}){
         <View style={styles.containerCardFeatures}>
             <CardDeposit navigation={navigation}></CardDeposit>
             <CardTransfer navigation={navigation}></CardTransfer>
-            <CardPay navigation={navigation}></CardPay>
+            <CardPay  navigation={navigation}></CardPay>
         </View>
     )
 }

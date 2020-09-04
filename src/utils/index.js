@@ -29,8 +29,45 @@ export const formatMoney = (amount, decimalCount = 2, decimal = ",", thousands =
 export const toTitleCase = (str) => {
     return str.replace(
         /\w\S*/g,
-        function(txt) {
+        function (txt) {
             return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         }
     );
+}
+
+
+export const formatStringDate = (date) => {
+    try {
+        let month = date.getMonth() + 1
+        let day = date.getDate()
+        let year = date.getFullYear()
+
+        let stringDay = '';
+        let stringMonth = '';
+
+        if (day < 10) {
+            stringDay = `0${day.toString()}`
+        } else {
+            stringDay = day.toString()
+        }
+        if (month < 10) {
+            stringMonth = `0${month.toString()}`
+        } else {
+            stringMonth = month.toString()
+        }
+
+        let dateString = `${year.toString()}-${stringMonth}-${stringDay}`
+
+        return dateString
+
+    } catch (e) {
+        throw new Error("Paramentro não é do tipo Date()")
+    }
+
+}
+
+export const getMonthString = (dateString) => {
+    let dateArray = dateString.split("-")
+
+    return dateArray[1]
 }

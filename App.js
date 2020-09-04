@@ -12,18 +12,19 @@ import {
   NumberAgencyScreen,
   DepositScreen,
   PaymentScreen,
-  AccountDetails
+  AccountDetails,
+  ToDeposit
 } from './src/pages'
 import 'react-native-gesture-handler';
-import configureStore from './src/redux/store'
+import store from './src/redux/store'
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator, TransitionPresets, TransitionSpecs } from '@react-navigation/stack';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react'
-
-const { store, persistor } = configureStore()
+  
 
 const Stack = createStackNavigator();
+
 const config = {
   animation: 'spring',
   config: {
@@ -39,7 +40,6 @@ const config = {
 export default function App() {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Login" mode="modal">
             <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
@@ -103,6 +103,7 @@ export default function App() {
             <Stack.Screen
               name="ConfirmTransfer"
               component={ConfirmTransfer}
+    
               options={{
                 headerShown: false,
                 ...TransitionPresets.SlideFromRightIOS,
@@ -197,8 +198,24 @@ export default function App() {
               component={AccountDetails}
               options={{
                 headerShown: false,
-                /* 
-                ...TransitionPresets.SlideFromRightIOS, */
+                
+                ...TransitionPresets.SlideFromRightIOS,
+                transitionSpec: {
+                  open: config,
+                  close: config,
+                },/* 
+                gestureEnabled: true,
+                gestureResponseDistance: 20,
+                gestureDirection: "horizontal" */
+              }}
+            />
+            <Stack.Screen
+              name="ToDeposit"
+              component={ToDeposit}
+              options={{
+                headerShown: false,
+                
+                ...TransitionPresets.SlideFromRightIOS,
                 transitionSpec: {
                   open: config,
                   close: config,
@@ -210,8 +227,6 @@ export default function App() {
             />
           </Stack.Navigator>
         </NavigationContainer>
-      </PersistGate>
     </Provider>
   );
 }
-BanksScreen

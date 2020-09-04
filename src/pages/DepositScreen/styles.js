@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
    textContainer:{
        fontSize: 35,
        color: primaryColor
+   },
+   containerDeposit:{
+       flex:1
    }
 })
 

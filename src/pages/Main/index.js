@@ -21,7 +21,7 @@ function Main({navigation, route, addDataAccount}) {
     return (
         <View style={styles.containerMain}>
             <StatusBar backgroundColor="#e63888" barStyle="light-content" />
-            <CardsFeatures  conta={conta} navigation={navigation}></CardsFeatures>
+            <CardsFeatures  navigation={navigation}></CardsFeatures>
             <View style={styles.containerContent}>
                 <Menu urlFoto={login.foto} navigation={navigation} ></Menu>
                 <CardAccount />

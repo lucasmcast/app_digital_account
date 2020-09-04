@@ -11,8 +11,8 @@ function ConfirmTransfer({ navigation, route }) {
     return (
         <View style={styles.container}>
             <HeaderAbstract 
-                onClickHide={() => navigation.navigate("InsertValue")}
-                title="Confirmar Transferência"
+                onClickHide={() => navigation.navigate("Main")}
+                title="Comprovante"
             />
             <View style={styles.containerInfo}>
                 <ItemConfirm icon="bank" text={conta.numeroConta}></ItemConfirm>

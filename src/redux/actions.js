@@ -4,7 +4,7 @@
  * @since 1.0.0
  */
 
-import { ADD_LOGIN, ADD_DATA_ACCOUNT, DEL_LOGIN, GET_LOGIN } from "./actionsTypes";
+import { ADD_LOGIN, ADD_DATA_ACCOUNT, DEL_LOGIN, GET_LOGIN, UPDATE_BALANCE } from "./actionsTypes";
 
 export const login = (email, password) => ({
     type: GET_LOGIN,
@@ -31,3 +31,10 @@ export const delLogin = () => ({
     type: DEL_LOGIN
 })
 
+export const updateBalance = (typeTransaction, value) => ({
+    type: UPDATE_BALANCE,
+    payload:{
+        typeTransaction,
+        value
+    }
+})

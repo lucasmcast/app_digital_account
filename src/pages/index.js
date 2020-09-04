@@ -11,3 +11,4 @@ export { default as NumberAccountScreen} from './TransferScreen/NumberAccountScr
 export { default as DepositScreen } from './DepositScreen'
 export { default as PaymentScreen } from './PaymentScreen'
 export { default as AccountDetails} from './DepositScreen/AccountDetails'
+export { default as ToDeposit} from './DepositScreen/ToDeposit'

@@ -10,7 +10,10 @@ import { createStore, applyMiddleware } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import AsyncStorage from '@react-native-community/async-storage';
 import createSagaMiddleware from 'redux-saga'
+import rootReducer from './reducers'
 
+export default createStore(rootReducer)
+/* 
 import rootReducer from './reducers'
 import mySaga from './sagas'
 
@@ -30,5 +33,5 @@ export default () => {
     // then run the saga
     sagaMiddleware.run(mySaga)
     return { store, persistor }
-}
+} */
 

@@ -1,12 +1,18 @@
 import React, { Fragment } from 'react'
 import GenericScreen from '../../components/GenericScreen'
 import { Text } from 'react-native'
-import {connect} from 'react-redux'
+import {updateBalance} from '../../redux/actions'
+import { connect } from 'react-redux'
 
 
-function InsertValueScreen({ navigation, route, saldoDisponivel }) {
+function InsertValueScreen({ navigation, route, saldoDisponivel, updateBalance }) {
 
     const onClickButton = (inputText) => () => {
+        let numberValue = inputText.replace("R", "")
+            .replace("$", "")
+
+        updateBalance(1, numberValue)
+
         navigation.navigate("ConfirmTransfer", { conta: route.params.conta, value: inputText })
     }
     return (
@@ -22,9 +28,9 @@ function InsertValueScreen({ navigation, route, saldoDisponivel }) {
         </Fragment>
     )
 }
-const mapStateToProps =(state) => {
-    return(
-        {saldoDisponivel : state.rootDataAccount.dataAccount.saldoDisponivel}
+const mapStateToProps = (state) => {
+    return (
+        { saldoDisponivel: state.rootDataAccount.dataAccount.saldoDisponivel }
     )
 }
-export default connect(mapStateToProps)(InsertValueScreen);
+export default connect(mapStateToProps, {updateBalance})(InsertValueScreen);

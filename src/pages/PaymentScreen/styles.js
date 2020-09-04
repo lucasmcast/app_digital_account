@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
         width: 60,
         height: 50,
         borderWidth: StyleSheet.hairlineWidth,
-        elevation: 25,
         borderRadius: 10
     }
 });
